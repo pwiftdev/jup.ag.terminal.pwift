@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jupiter Terminal Demo</title>
+    <!-- Attach the loading script -->
+    <script src='https://terminal.jup.ag/main-v2.js'></script>
+    <style>
+        /* Set background color to gray for the entire page */
+        body {
+            background-color: #ffa500; /* Use any shade of gray you prefer */
+            margin: 0; /* Reset default margin */
+            padding: 0; /* Reset default padding */
+        }
+
+        /* Center the container div */
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Style the container div */
+        #integrated-terminal {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Prepare a div for Terminal to render -->
+    <div id="integrated-terminal"></div>
+
+    <script>
+        // Initialize Jupiter Terminal
+        window.Jupiter.init({
+            displayMode: "integrated",
+            integratedTargetId: "integrated-terminal",
+            endpoint: "https://api.mainnet-beta.solana.com",
+            strictTokenList: false,
+            formProps: {
+                fixedOutputMint: true,
+                initialOutputMint: "4oSeAbURgdH3Q778FKJBbZU9tLzPPfkinBWSWgy1YrKQ",
+            },
+        });
+    </script>
+</body>
+</html>
